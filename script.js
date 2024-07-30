@@ -1,10 +1,14 @@
 //BRGR BUTTON FOR MOBILE
 const brgButton = document.querySelector(".brgr-menu")
 const navOptions = document.querySelector('#nav-option')
-const heightOptions = navOptions.children[0].offsetHeight * (navOptions.children.length) + ((navOptions.children.length + 1) * 15) 
-brgButton.addEventListener('click', () => {
+const heightOptions = navOptions.children[0].offsetHeight * (navOptions.children.length) + ((navOptions.children.length + 1) * 15)
+brgButton.addEventListener('click', (e) => {
+  e.target.disabled = true
   brgButton.classList.toggle('show')
   navOptions.style.height = navOptions.offsetHeight <= 0 ? heightOptions + 'px' : '0px';
+  setTimeout(() => {
+    e.target.disabled = false
+  }, 400);
 })
 
 // ACCORDION FOR COLLECTION
@@ -26,8 +30,10 @@ accordionBtns.forEach(el => {
 
 const swiper = new Swiper('.swiper', {
   loop: true,
+  slidesPerView: 2,
+  spaceBetween: 5,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-button.next',
+    prevEl: '.swiper-button.prev',
   },
 });

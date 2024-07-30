@@ -73,7 +73,7 @@ nav{
   align-items: center;
   background-color: var(--mainBlue);
   gap: 15px;
-  transition: height .5s linear;
+  transition: height .4s linear;
 }
 .brgr-menu{
   position: relative;
@@ -137,7 +137,6 @@ nav{
   display: flex;
   flex-direction: column;
   justify-content: end;
-  gap: 20px;
   padding-bottom: 30px;
 }
 .title h1{
@@ -241,14 +240,15 @@ nav{
   overflow: hidden;
 }
 .accordion-content.show {
-  max-height: 200px;
+  max-height: 2000px;
 }
-.swiper-slide{
-  height: 100px;
-  background-color: var(--lightBlue);
+.swiper-slide img{
+  width: 100%;
+  height: auto;
 }
-.swiper-button{
-  display: none;
+.swiper-button-wrapper{
+  display: flex;
+  justify-content: space-between;
 }
 
 /* ABOUT US */
@@ -271,6 +271,31 @@ nav{
   color: var(--mainBeige);
 }
 #lookbook p {
-  margin-top: 10px;
+  margin: 10px auto 25px;
   text-wrap: balance;
+}
+#lookbook .swiper-slide img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: top;
+}
+/* FOOTER */
+footer.container{
+  background-color: var(--mainBlue);
+  color: var(--mainBeige);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+footer h2{
+  font-family: 'Montserrat';
+  font-style: normal;
+}
+footer p, footer h2 {
+  font-size: 13px;
+  font-weight: 200;
 }
