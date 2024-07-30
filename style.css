@@ -6,6 +6,10 @@
   font-weight: 200;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --mainBeige: #fff5e0;
   --mainBlue: #012130;
@@ -78,7 +82,6 @@ header {
 
 nav {
   position: relative;
-  padding: 0 20px;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -163,7 +166,7 @@ nav .logo {
   margin-bottom: 50px;
 }
 
-#home .container::before {
+#home>div::before {
   position: absolute;
   content: '';
   width: 100%;
@@ -175,7 +178,7 @@ nav .logo {
   z-index: -1;
 }
 
-#home .container {
+#home>div {
   position: relative;
   z-index: 1;
   height: 100%;
@@ -352,15 +355,18 @@ nav .logo {
 }
 
 /* FOOTER */
-footer.container {
+footer {
   background-color: var(--mainBlue);
   color: var(--mainBeige);
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+footer .container {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 footer .logo img {
@@ -390,6 +396,12 @@ footer h2 {
     margin-bottom: 50px;
   }
 
+  .swiper-button-wrapper .arrow {
+    font-size: 30px !important;
+    height: 30px !important;
+    width: 30px !important;
+  }
+
   /* NAVBAR */
   #nav-option {
     height: auto;
@@ -412,6 +424,7 @@ footer h2 {
     flex-direction: row;
     justify-content: space-between;
     align-items: end;
+    height: 100%;
   }
 
   .title h1 {
@@ -474,25 +487,54 @@ footer h2 {
   }
 
   /* FOOTER */
-  footer.container {
-    background-color: var(--mainBlue);
-    color: var(--mainBeige);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  footer {
+    padding-top: 80px;
+    padding-bottom: 50px;
   }
 
-  footer h2 {
-    font-family: 'Montserrat';
-    font-style: normal;
+  footer .insta {
+    font-size: 25px;
   }
 
   footer p,
   footer h2 {
     font-size: 16px;
     font-weight: 200;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    padding: 0;
+    width: clamp(1100px, 90vw, 1800px);
+    margin: auto;
+  }
+
+  /* HOME */
+  #home {
+    height: 650px;
+  }
+
+  .title h1 {
+    font-size: 50px;
+  }
+
+  .title h1 span {
+    font-size: 90px;
+  }
+
+  /* Collection */
+
+  .arrivals-item .description {
+    font-size: 20px;
+  }
+
+  .arrivals-item .description .price {
+    font-size: 16px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding-top: 100px;
   }
 }
