@@ -2,7 +2,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "TimesNewRoman" ,Arial, Helvetica, sans-serif;
+  font-family: "Montserrat" ,Arial, Helvetica, sans-serif;
+  font-weight: 200;
 }
 :root {
   --mainBeige: #fff5e0;
@@ -25,6 +26,7 @@ body{
   padding: 0 20px;
 }
 .light-btn{
+  font-weight: 300;
   background-color: var(--mainBeige);
   color: var(--mainBlue);
 }
@@ -33,6 +35,7 @@ body{
   padding: 0.3rem 2rem;
 }
 h1,h2,h3,h4,h5,h6 {
+  font-family: "TimesNewRoman" ,Arial, Helvetica, sans-serif;
   font-style: italic;
 }
 /* NAVBAR */
@@ -47,6 +50,7 @@ header{
   height: 70px;
 }
 nav{
+  position: relative;
   padding: 0 20px;
   height: 100%;
   display: flex;
@@ -54,9 +58,54 @@ nav{
   align-items: center;
 }
 #nav-option{
+  overflow: hidden;
+  height: 0;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mainBlue);
   gap: 15px;
+  transition: height .5s linear;
 }
+.brgr-menu{
+  position: relative;
+  padding: 9px 0;
+  background-color: transparent;
+  border: none;
+}
+.brgr-menu div{
+  width: 20px;
+  height: 2px;
+  background-color: var(--mainBeige);
+  transition: rotate .3s linear;
+}
+.brgr-menu::after,.brgr-menu::before{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: var(--mainBeige);
+  left: 0;
+  transition: all .3s linear;
+}
+.brgr-menu::before {top: 0;}
+.brgr-menu::after {bottom: 0;}
+.brgr-menu.show div{
+  rotate: 45deg;
+}
+.brgr-menu.show::before{
+  opacity: 0;
+}
+.brgr-menu.show::after {
+  bottom: 9px;
+  rotate: -45deg;
+}
+
 
 /* HOME */
 #home{
@@ -94,10 +143,13 @@ nav{
   font-weight: 500;
 }
 .title h1 span{
+  font-family: inherit;
   font-size: 45px;
 }
 .title h2 {
-  font-weight: 200;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 100;
   font-size: 15px;
 }
 #home .container .btn{
@@ -147,6 +199,15 @@ nav{
   font-weight: 300;
   display: flex;
   justify-content: space-between;
+  align-items: end;
+}
+.arrivals-item .description > * {
+  font-style: normal;
+}
+.arrivals-item .description .price {
+  font-family: "Montserrat";
+  font-size: 11px;
+  font-weight: 300;
 }
 .collection-list li > div{
   display: flex;

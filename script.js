@@ -1,3 +1,13 @@
+//BRGR BUTTON FOR MOBILE
+const brgButton = document.querySelector(".brgr-menu")
+const navOptions = document.querySelector('#nav-option')
+const heightOptions = navOptions.children[0].offsetHeight * (navOptions.children.length) + ((navOptions.children.length + 1) * 15) 
+brgButton.addEventListener('click', () => {
+  brgButton.classList.toggle('show')
+  navOptions.style.height = navOptions.offsetHeight <= 0 ? heightOptions + 'px' : '0px';
+})
+
+// ACCORDION FOR COLLECTION
 const accordionBtns = document.querySelectorAll('.accordion')
 const accordionContents = document.querySelectorAll('.accordion-content')
 accordionBtns.forEach(el => {
