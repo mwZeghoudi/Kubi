@@ -106,7 +106,6 @@ nav{
   rotate: -45deg;
 }
 
-
 /* HOME */
 #home{
   margin-top: 70px;
@@ -234,10 +233,17 @@ nav{
   rotate: 180deg;
 }
 .accordion-content{
-  height: 0;
+  max-height: 0px;
   transition: all .5s linear;
+  overflow: hidden;
 }
 .accordion-content.show {
-  height: 200px;
-  background-color: red;
+  max-height: 200px;
+}
+.swiper-slide{
+  height: 100px;
+  background-color: var(--lightBlue);
+}
+.swiper-button{
+  display: none;
 }
