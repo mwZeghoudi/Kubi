@@ -11,6 +11,12 @@
   --brown: #C07651;
   --lightBlue: #8AADB7;
 }
+body{
+  background-color: var(--mainBeige);
+}
+p{
+  font-size: 13px;
+}
 a{
   text-decoration: none;
   color: inherit;
@@ -18,9 +24,6 @@ a{
 }
 ul{
   list-style: none;
-}
-body{
-  background-color: var(--mainBeige);
 }
 .container{
   padding: 0 20px;
@@ -246,4 +249,28 @@ nav{
 }
 .swiper-button{
   display: none;
+}
+
+/* ABOUT US */
+#about{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: var(--mainBlue);
+  color: var(--mainBeige);
+}
+#about p {
+  margin-top: 10px;
+  text-wrap: balance;
+}
+
+/* LOOKBOOK */
+#lookbook {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: var(--brown);
+  color: var(--mainBeige);
+}
+#lookbook p {
+  margin-top: 10px;
+  text-wrap: balance;
 }
