@@ -18,10 +18,10 @@ accordionBtns.forEach(el => {
   el.addEventListener('click', () => {
     accordionContents.forEach(e => {
       if (e.dataset.acc === el.dataset.acc) {
-        e.classList.toggle('show')
+        e.style.height = e.offsetHeight <= 0 ? e.children[0].offsetHeight + 'px' : '0px'
         e.parentElement.children[0].lastElementChild.classList.toggle('show')
       } else {
-        e.classList.remove('show')
+        e.style.height = '0px'
         e.parentElement.children[0].lastElementChild.classList.remove('show')
       }
     });
@@ -32,8 +32,15 @@ const swiper = new Swiper('.swiper', {
   loop: true,
   slidesPerView: 2,
   spaceBetween: 5,
+  grabCursor: true,
   navigation: {
     nextEl: '.swiper-button.next',
     prevEl: '.swiper-button.prev',
   },
+  breakpoints: {
+    900: {
+      slidesPerView: 3,
+      spaceBetween: 10
+    }
+  }
 });
