@@ -85,6 +85,10 @@ nav {
   align-items: center;
 }
 
+nav .logo {
+  width: 100px;
+}
+
 #nav-option {
   overflow: hidden;
   height: 0;
@@ -357,6 +361,10 @@ footer.container {
   gap: 15px;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+footer .logo img {
+  width: 150px;
 }
 
 footer h2 {
